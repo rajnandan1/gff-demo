@@ -5,6 +5,8 @@
 	import * as Select from '$lib/components/ui/select';
 	import { mypgstore } from '$lib/stores.js';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
+
 
 	let email = '';
 	let phone = '';
@@ -75,7 +77,7 @@
 	];
 	function formSubmit() {
 		$mypgstore = favoritePGs;
-		goto('/home/insights');
+		goto(base+'/home/insights');
 	}
 </script>
 
@@ -143,7 +145,7 @@
 										{#each pgs as pg}
 											<Select.Item value={pg.name} label={pg.display}>
 												<div class="flex items-center gap-2">
-													<img src="/{pg.logo}" alt="" class="h-3" />
+													<img src="{base}/{pg.logo}" alt="" class="h-3" />
 													<span>{pg.display}</span>
 												</div>
 											</Select.Item>
