@@ -8,7 +8,7 @@
 	let isReady = false;
 	let chart;
 
-	let gatewaysSelected = ['Cashfree', 'Payu', 'Stripe', 'Razorpay'];
+	let gatewaysSelected = pgs.map((pg) => pg.display);
 	let dataSeries = [];
 	let totalSettledAmount = 0;
 	let totalSettlementCount = 0;
@@ -128,6 +128,7 @@
 			if (chart) {
 				chart.destroy();
 			}
+			gatewaysSelected = pgs.map((pg) => pg.display);
 			renderChart();
 		}
 	}
