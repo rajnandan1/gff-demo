@@ -2,12 +2,12 @@ body {
 	background-color: #fff;
 }
 * {
-	font-family: 'Montserrat', sans-serif;
+	font-family: "Montserrat", sans-serif;
 }
 
 h1,
 h1 * {
-	font-family: 'Prata', serif;
+	font-family: "Prata", serif;
 }
 .button-87 {
 	text-align: center;
@@ -55,7 +55,7 @@ h1 * {
 }
 
 .button-85:before {
-	content: '';
+	content: "";
 	background: linear-gradient(
 		45deg,
 		#ff0000,
@@ -96,7 +96,7 @@ h1 * {
 
 .button-85:after {
 	z-index: -1;
-	content: '';
+	content: "";
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -128,4 +128,26 @@ h1 * {
 	font-weight: bold !important;
 	background-color: #12094e !important;
 	border-color: #12094e !important;
+}
+
+.strike-through,
+.strike-through * {
+	text-decoration: line-through !important;
+	text-decoration-thickness: 2px !important;
+}
+.aside-sel {
+	background-image: url("https://www.frogment.com/images/grunge-underline.svg");
+	background-repeat: no-repeat;
+	background-size: 100px 10px;
+	background-position: 45px 20px;
+	animation: grow-from-left 0.3s ease-in-out;
+}
+
+@keyframes grow-from-left {
+	0% {
+		background-size: 0px 10px;
+	}
+	100% {
+		background-size: 100px 10px;
+	}
 }

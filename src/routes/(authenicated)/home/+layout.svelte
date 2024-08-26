@@ -1,11 +1,11 @@
 <script>
-	import Aside from '$lib/components/Aside.svelte';
+	import Aside from "$lib/components/Aside.svelte";
 </script>
 
 <div class="app">
 	<div class="flex h-screen bg-white">
 		<!-- Sidebar -->
-		<aside class="w-64 border border-l bg-gradient-to-tl from-rose-50 via-violet-50 to-white">
+		<aside class="w-64 border border-l bg-gradient-to-tl from-blue-50 via-violet-50 to-white">
 			<Aside />
 		</aside>
 

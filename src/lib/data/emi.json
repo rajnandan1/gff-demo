@@ -1,0 +1,48 @@
+[
+	{
+		"display": "Credit Card",
+		"selected": true,
+		"modes": [
+			{ "nick": "amex", "display": "AMEX Credit Card - EMI", "selected": true },
+			{ "nick": "ausmallccemi", "display": "AuSmall Credit Card Emi", "selected": true },
+			{ "nick": "axis", "display": "Axis Credit Card - EMI", "selected": true },
+			{ "nick": "bob", "display": "BOB Credit Card - EMI", "selected": true },
+			{ "nick": "citi", "display": "Citi Credit Card - EMI", "selected": true },
+			{ "nick": "hdfc", "display": "HDFC Credit Card - EMI", "selected": true },
+			{ "nick": "hsbc", "display": "HSBC Credit Card - EMI", "selected": true },
+			{ "nick": "icici", "display": "ICICI Credit Card - EMI", "selected": true },
+			{ "nick": "idfb", "display": "IDFB Credit Card EMI", "selected": true },
+			{ "nick": "kotak", "display": "Kotak Credit Card - EMI", "selected": true },
+			{ "nick": "onecard", "display": "One Card Credit Card EMI", "selected": true },
+			{ "nick": "rbl", "display": "RBL Credit Card - EMI", "selected": true },
+			{ "nick": "sc", "display": "Standard Chartered Credit Card - EMI", "selected": true },
+			{ "nick": "yes", "display": "Yes Bank Credit Card - EMI", "selected": true }
+		]
+	},
+	{
+		"display": "Debit Card",
+		"selected": true,
+		"modes": [
+			{ "nick": "hdfc", "display": "HDFC Debit Card - EMI", "selected": true },
+			{ "nick": "kotak", "display": "Kotak Debit Card - EMI", "selected": true }
+		]
+	},
+	{
+		"display": "Cardless",
+		"selected": true,
+		"modes": [
+			{ "nick": "axio cardless emi", "display": "Axio Cardless EMI", "selected": true },
+			{ "nick": "bajaj emi", "display": "Bajaj Finserve EMI", "selected": true },
+			{ "nick": "bharatx", "display": "Bharatx", "selected": true },
+			{ "nick": "cashe cardless", "display": "Cashe Cardless ", "selected": true },
+			{ "nick": "fibe cardless emi", "display": "Fibe Cardless EMI", "selected": true },
+			{ "nick": "hdfc cardless", "display": "Hdfc Cardless Emi", "selected": true },
+			{ "nick": "icici cardless", "display": "Icici Cardless Emi", "selected": true },
+			{ "nick": "idfc cardless", "display": "Idfc Cardless Emi", "selected": true },
+			{ "nick": "kotak cardless", "display": "Kotak Cardless Emi", "selected": true },
+			{ "nick": "snapmint", "display": "Snapmint", "selected": true },
+			{ "nick": "TVS Credit", "display": "TVS Credit ", "selected": true },
+			{ "nick": "Zestmoneyv2", "display": "Zestmoney", "selected": true }
+		]
+	}
+]

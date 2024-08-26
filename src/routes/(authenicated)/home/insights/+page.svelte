@@ -1,19 +1,19 @@
 <script lang="ts">
-	import * as Card from '$lib/components/ui/card';
-	import SRCHART from '$lib/components/srchart.svelte';
-	import Fee from '$lib/components/fee.svelte';
-	import GMV from '$lib/components/gmv.svelte';
-	import Settlement from '$lib/components/settlement.svelte';
-	import Refund from '$lib/components/refund.svelte';
-	import Error from '$lib/components/error.svelte';
-	import Loader from '$lib/components/loader.svelte';
-	import Summarize from '$lib/components/summarize.svelte';
-	import { Checkbox } from '$lib/components/ui/checkbox';
-	import { Label } from '$lib/components/ui/label';
-	import { onMount } from 'svelte';
-	import { Button } from '$lib/components/ui/button';
-	import { mypgstore } from '$lib/stores.js';
-	import { getRandomInt } from '$lib/tools/chart';
+	import * as Card from "$lib/components/ui/card";
+	import SRCHART from "$lib/components/srchart.svelte";
+	import Fee from "$lib/components/fee.svelte";
+	import GMV from "$lib/components/gmv.svelte";
+	import Settlement from "$lib/components/settlement.svelte";
+	import Refund from "$lib/components/refund.svelte";
+	import Error from "$lib/components/error.svelte";
+	import Loader from "$lib/components/loader.svelte";
+	import Summarize from "$lib/components/summarize.svelte";
+	import { Checkbox } from "$lib/components/ui/checkbox";
+	import { Label } from "$lib/components/ui/label";
+	import { onMount } from "svelte";
+	import { Button } from "$lib/components/ui/button";
+	import { mypgstore } from "$lib/stores.js";
+	import { getRandomInt } from "$lib/tools/chart";
 
 	import {
 		TrendingUp,
@@ -24,68 +24,68 @@
 		HandCoins,
 		Undo2,
 		FileWarning
-	} from 'lucide-svelte';
+	} from "lucide-svelte";
 
 	let pgs = [
 		{
-			logo: 'cf.png',
-			name: 'cf',
+			logo: "cf.png",
+			name: "cf",
 			selected: false,
-			display: 'Cashfree'
+			display: "Cashfree"
 		},
 		{
-			logo: 'payu.png',
-			name: 'payu',
+			logo: "payu.png",
+			name: "payu",
 			selected: false,
-			display: 'Payu'
+			display: "Payu"
 		},
 		{
-			logo: 'stripe.png',
-			name: 'stripe',
+			logo: "stripe.png",
+			name: "stripe",
 			selected: false,
-			display: 'Stripe'
+			display: "Stripe"
 		},
 		{
-			logo: 'rzp.png',
-			name: 'rzp',
+			logo: "rzp.png",
+			name: "rzp",
 			selected: false,
-			display: 'Razorpay'
+			display: "Razorpay"
 		},
 		{
-			logo: 'tpsl.png',
-			name: 'tpsl',
+			logo: "tpsl.png",
+			name: "tpsl",
 			selected: false,
-			display: 'Techprocess'
+			display: "Techprocess"
 		},
 		{
-			logo: 'ccavenue.png',
-			name: 'ccavenue',
+			logo: "ccavenue.png",
+			name: "ccavenue",
 			selected: false,
-			display: 'CCAVENUE'
+			display: "CCAVENUE"
 		},
 		{
-			logo: 'paytm.png',
-			name: 'paytm',
+			logo: "paytm.png",
+			name: "paytm",
 			selected: false,
-			display: 'Paytm'
+			display: "Paytm"
 		},
 		{
-			logo: 'phonepe.png',
-			name: 'phonepe',
+			logo: "phonepe.png",
+			name: "phonepe",
 			selected: false,
-			display: 'PhonePe'
+			display: "PhonePe"
 		},
 		{
-			logo: 'atom.png',
-			name: 'atom',
+			logo: "atom.png",
+			name: "atom",
 			selected: false,
-			display: 'Atom'
+			display: "Atom"
 		},
 		{
-			logo: 'lyra.png',
-			name: 'lyra',
+			logo: "lyra.png",
+			name: "lyra",
 			selected: false,
-			display: 'Lyra'
+			display: "Lyra"
 		}
 	];
 	let mypgs = $mypgstore;
@@ -117,10 +117,7 @@
 	});
 </script>
 
-<div
-	id="header"
-	class="  z-50 w-full bg-gradient-to-l from-blue-50/60 to-blue-100/60 p-4 pb-0 pt-4 backdrop-blur"
->
+<div id="header" class="  z-50 w-full p-4 pb-0 pt-4 backdrop-blur">
 	<h1 class="text-3xl font-semibold">
 		<span
 			class="bg-gradient-to-l from-purple-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent"
@@ -129,14 +126,12 @@
 		</span>
 	</h1>
 	<p class="mb-0 text-sm text-neutral-500">
-		Welcome to the Insights AI page. Discover Insights on the gateways you have using Insights AI.
+		Welcome to the Insights AI page. Discover Insights on the gateways you have using Insights
+		AI.
 	</p>
 </div>
 
-<div
-	id="header"
-	class="sticky top-0 z-40 mb-4 w-full bg-gradient-to-l from-blue-50/60 to-blue-100/60 p-4 pb-0 pt-4 backdrop-blur"
->
+<div id="header" class="sticky top-0 z-40 mb-4 w-full border-b p-4 pb-0 pt-4 backdrop-blur">
 	<div class="grid grid-cols-12 gap-4">
 		<div class="col-span-10">
 			<div class="my-4 flex flex-nowrap gap-4 overflow-x-auto pb-4">

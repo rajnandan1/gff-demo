@@ -1,0 +1,91 @@
+[
+	{
+		"display": "Credit Card",
+		"selected": true,
+		"modes": [
+			{ "nick": "amex", "display": "AMEX", "selected": true },
+			{ "nick": "diners", "display": "DINERS CLUB", "selected": true },
+			{ "nick": "masterc", "display": "MASTER Corporate", "selected": true },
+			{ "nick": "mastere", "display": "MASTER Elite", "selected": true },
+
+			{
+				"nick": "masterpsbi",
+				"display": "MASTER Premium",
+				"selected": true
+			},
+			{ "nick": "mastercard", "display": "MASTER ", "selected": true },
+			{
+				"nick": "mastercard",
+				"display": "MASTER  International",
+				"selected": true
+			},
+			{ "nick": "rupay", "display": "Rupay", "selected": true },
+			{ "nick": "visac", "display": "VISA Corporate", "selected": true },
+			{ "nick": "visa", "display": "VISA", "selected": true },
+			{ "nick": "visae", "display": "VISA Elite", "selected": true },
+			{ "nick": "visa", "display": "VISA - International", "selected": true },
+
+			{
+				"nick": "visaphdfc",
+				"display": "VISA Premium",
+				"selected": true
+			}
+		]
+	},
+	{
+		"display": "Debit Card",
+		"selected": true,
+		"modes": [
+			{
+				"nick": "maestro",
+				"display": "Maestro",
+				"selected": true
+			},
+			{
+				"nick": "maestro",
+				"display": "Maestro - International",
+				"selected": true
+			},
+			{
+				"nick": "mastercard",
+				"display": "MASTER",
+				"selected": true
+			},
+
+			{
+				"nick": "mastercard",
+				"display": "MASTER  - International",
+				"selected": true
+			},
+			{ "nick": "rupaysbi", "display": "Rupay", "selected": true },
+			{
+				"nick": "visa",
+				"display": "VISA",
+				"selected": true
+			},
+			{ "nick": "visa", "display": "VISA International", "selected": true }
+		]
+	},
+	{
+		"display": "Prepaid Card",
+		"selected": true,
+		"modes": [
+			{ "nick": "masteraxis", "display": "MASTER AXIS", "selected": true },
+			{ "nick": "masterhdfc", "display": "MASTER HDFC", "selected": true },
+			{ "nick": "mastericici", "display": "MASTER ICICI", "selected": true },
+			{ "nick": "mastersbi", "display": "MASTER SBI", "selected": true },
+			{ "nick": "maestro", "display": "Maestro", "selected": true },
+			{ "nick": "mastercard", "display": "MASTER", "selected": true },
+			{ "nick": "rupayraxis", "display": "Rupay AXIS", "selected": true },
+			{ "nick": "rupayhdfc", "display": "Rupay HDFC", "selected": true },
+			{ "nick": "rupayicici", "display": "Rupay ICICI", "selected": true },
+			{ "nick": "rupaysbi", "display": "Rupay SBI", "selected": true },
+			{ "nick": "rupay", "display": "Rupay", "selected": true },
+			{ "nick": "visa", "display": "VISA", "selected": true },
+			{ "nick": "visaaxis", "display": "VISA AXIS", "selected": true },
+			{ "nick": "visahdfc", "display": "VISA HDFC", "selected": true },
+			{ "nick": "visaicici", "display": "VISA ICICI", "selected": true },
+			{ "nick": "visasbi", "display": "VISA SBI", "selected": true }
+		]
+	}
+]

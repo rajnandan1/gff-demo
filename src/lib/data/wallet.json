@@ -1,0 +1,11 @@
+[
+	{ "nick": "airtelmoney", "display": "Airtel money", "selected": true },
+	{ "nick": "amazonpay", "display": "Amazon Pay", "selected": true },
+	{ "nick": "freecharge", "display": "FreeCharge", "selected": true },
+	{ "nick": "mobikwik", "display": "MobiKwik", "selected": true },
+	{ "nick": "ola", "display": "OLA Money", "selected": true },
+	{ "nick": "paytm", "display": "Paytm", "selected": true },
+	{ "nick": "Payzapp", "display": "Payzapp", "selected": true },
+	{ "nick": "phonepe", "display": "PhonePe", "selected": true },
+	{ "nick": "jiomoney", "display": "Reliance Jio Money", "selected": true }
+]
