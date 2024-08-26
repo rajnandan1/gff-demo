@@ -277,7 +277,7 @@
 			<Sheet.Title>Configure a Gateway</Sheet.Title>
 		</Sheet.Header>
 		<div class="my-4 grid grid-cols-1">
-			<Tabs.Root value="password" class="w-full">
+			<Tabs.Root value="account" class="w-full">
 				<Tabs.List class="w-full justify-start">
 					<Tabs.Trigger value="account">Add Gateway Details</Tabs.Trigger>
 					<Tabs.Trigger value="password">Add Payment Methods</Tabs.Trigger>

@@ -1,0 +1,120 @@
+[
+	{
+		"createdAt": "22nd Aug 2024",
+		"gateway": "Cashfree",
+		"gatewayLogo": "cf.png",
+		"gatewayId": "Cashfree Test account 1848",
+		"env": "Sandbox",
+		"successRate": "getRandomInt(60, 88) + \"%\"",
+		"active": true,
+		"verified": true
+	},
+	{
+		"createdAt": "14th Aug 2024",
+		"gateway": "Phonepe",
+		"gatewayLogo": "phonepe.png",
+		"gatewayId": "Phonepe UPI Test",
+		"env": "Sandbox",
+		"successRate": "getRandomInt(60, 88) + \"%\"",
+		"active": true,
+		"verified": true
+	},
+	{
+		"createdAt": "22nd Aug 2024",
+		"gateway": "Cashfree",
+		"gatewayLogo": "cf.png",
+		"gatewayId": "😊 Cashfree Active account",
+		"env": "Production",
+		"successRate": "getRandomInt(60, 88) + \"%\"",
+		"active": true,
+		"verified": true
+	},
+	{
+		"createdAt": "18th Aug 2024",
+		"gateway": "Payu",
+		"gatewayLogo": "payu.png",
+		"gatewayId": ">₹10,000 Per Order",
+		"env": "Sandbox",
+		"successRate": "getRandomInt(60, 88) + \"%\"",
+		"active": true,
+		"verified": false
+	},
+	{
+		"createdAt": "9th Aug 2024",
+		"gateway": "Stripe",
+		"gatewayLogo": "stripe.png",
+		"gatewayId": "USD,EUR account",
+		"env": "Production",
+		"successRate": "getRandomInt(60, 88) + \"%\"",
+		"active": true,
+		"verified": false
+	},
+	{
+		"createdAt": "18th Aug 2024",
+		"gateway": "Payu",
+		"gatewayLogo": "payu.png",
+		"gatewayId": "Main payu",
+		"env": "Production",
+		"successRate": "getRandomInt(60, 88) + \"%\"",
+		"active": true,
+		"verified": true
+	},
+	{
+		"createdAt": "18th Aug 2024",
+		"gateway": "Paytm",
+		"gatewayLogo": "paytm.png",
+		"gatewayId": "TPV paytm",
+		"env": "Production",
+		"successRate": "getRandomInt(60, 88) + \"%\"",
+		"active": true,
+		"verified": true
+	},
+	{
+		"createdAt": "15th Aug 2024",
+		"gateway": "Razorpay",
+		"gatewayLogo": "rzp.png",
+		"gatewayId": "razorpay new account",
+		"env": "Production",
+		"successRate": "getRandomInt(60, 88) + \"%\"",
+		"active": false,
+		"verified": true
+	},
+	{
+		"createdAt": "12th Aug 2024",
+		"gateway": "CCAVENUE",
+		"gatewayLogo": "ccavenue.png",
+		"gatewayId": "CCAVENUE ES account",
+		"env": "Sandbox",
+		"successRate": "getRandomInt(60, 88) + \"%\"",
+		"active": true,
+		"verified": false
+	},
+	{
+		"createdAt": "9th Aug 2024",
+		"gateway": "Stripe",
+		"gatewayLogo": "stripe.png",
+		"gatewayId": "Stripe EU account",
+		"env": "Production",
+		"successRate": "getRandomInt(60, 88) + \"%\"",
+		"active": true,
+		"verified": false
+	},
+	{
+		"createdAt": "14th Aug 2024",
+		"gateway": "Razorpay",
+		"gatewayLogo": "rzp.png",
+		"gatewayId": "Rzp temp account",
+		"env": "Production",
+		"successRate": "getRandomInt(60, 88) + \"%\"",
+		"active": true
+	},
+	{
+		"createdAt": "14th Aug 2024",
+		"gateway": "tpsl",
+		"gatewayLogo": "tpsl.png",
+		"gatewayId": "TPSL Netbanking Only",
+		"env": "Production",
+		"successRate": "getRandomInt(60, 88) + \"%\"",
+		"active": true
+	}
+]

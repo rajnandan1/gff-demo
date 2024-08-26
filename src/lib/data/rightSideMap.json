@@ -1,0 +1,75 @@
+{
+	"Order Amount": {
+		"type": "number",
+		"value": 100
+	},
+	"Order Currency": {
+		"type": "select",
+		"value": "INR",
+		"options": ["INR", "USD", "EUR", "GBP"]
+	},
+	"Payment Method": {
+		"type": "select",
+		"value": "UPI",
+		"options": ["UPI", "Card", "Netbanking", "Wallet"]
+	},
+	"Card Country": {
+		"type": "select",
+		"value": "India",
+		"options": ["India", "USA", "UK", "Germany"]
+	},
+	"Card Bin": {
+		"type": "number",
+		"value": 411111
+	},
+	"Card Type": {
+		"type": "select",
+		"value": "Credit",
+		"options": ["Credit", "Debit"]
+	},
+	"Card Brand": {
+		"type": "select",
+		"value": "Visa",
+		"options": ["Visa", "Mastercard", "Rupay"]
+	},
+	"Card Issuer": {
+		"type": "select",
+		"value": "HDFC",
+		"options": ["HDFC", "ICICI", "SBI", "Axis"]
+	},
+	"Wallet Provider": {
+		"type": "select",
+		"value": "Paytm",
+		"options": ["Paytm", "PhonePe", "Google Pay", "Amazon Pay"]
+	},
+	"UPI Mode": {
+		"type": "select",
+		"value": "Collect",
+		"options": ["Collect", "Push"]
+	},
+	"GMV in a Day": {
+		"type": "number",
+		"value": 1000
+	},
+	"GMV in a Week": {
+		"type": "number",
+		"value": 10000
+	},
+	"GMV in a Month": {
+		"type": "number",
+		"value": 100000
+	},
+	"User ID": {
+		"type": "text",
+		"value": "user123"
+	},
+	"User State": {
+		"type": "select",
+		"value": "Delhi",
+		"options": ["Delhi", "Mumbai", "Bangalore", "Chennai"]
+	},
+	"User Defined Field": {
+		"type": "text",
+		"value": "field123"
+	}
+}
