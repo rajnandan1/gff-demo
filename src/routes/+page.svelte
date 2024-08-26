@@ -1,83 +1,106 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button/index.js';
-	import { Input } from '$lib/components/ui/input/index.js';
-	import { Label } from '$lib/components/ui/label/index.js';
-	import * as Select from '$lib/components/ui/select';
-	import { mypgstore } from '$lib/stores.js';
-	import { goto } from '$app/navigation';
-	import { base } from '$app/paths';
+	import { Button } from "$lib/components/ui/button/index.js";
+	import { Input } from "$lib/components/ui/input/index.js";
+	import { Label } from "$lib/components/ui/label/index.js";
+	import * as Select from "$lib/components/ui/select";
+	import { mypgstore } from "$lib/stores.js";
+	import { goto } from "$app/navigation";
+	import { base } from "$app/paths";
 
-
-	let email = '';
-	let phone = '';
-	let company = '';
+	let email = "";
+	let phone = "";
+	let company = "";
+	let name = "";
 	let favoritePGs = [];
 
 	let pgs = [
 		{
-			logo: 'cf.png',
-			name: 'cf',
+			logo: "cf.png",
+			name: "cf",
 			selected: false,
-			display: 'Cashfree'
+			display: "Cashfree"
 		},
 		{
-			logo: 'payu.png',
-			name: 'payu',
+			logo: "payu.png",
+			name: "payu",
 			selected: false,
-			display: 'Payu'
+			display: "Payu"
 		},
 		{
-			logo: 'stripe.png',
-			name: 'stripe',
+			logo: "stripe.png",
+			name: "stripe",
 			selected: false,
-			display: 'Stripe'
+			display: "Stripe"
 		},
 		{
-			logo: 'rzp.png',
-			name: 'rzp',
+			logo: "rzp.png",
+			name: "rzp",
 			selected: false,
-			display: 'Razorpay'
+			display: "Razorpay"
 		},
 		{
-			logo: 'tpsl.png',
-			name: 'tpsl',
+			logo: "tpsl.png",
+			name: "tpsl",
 			selected: false,
-			display: 'Techprocess'
+			display: "Techprocess"
 		},
 		{
-			logo: 'ccavenue.png',
-			name: 'ccavenue',
+			logo: "ccavenue.png",
+			name: "ccavenue",
 			selected: false,
-			display: 'CCAVENUE'
+			display: "CCAVENUE"
 		},
 		{
-			logo: 'paytm.png',
-			name: 'paytm',
+			logo: "paytm.png",
+			name: "paytm",
 			selected: false,
-			display: 'Paytm'
+			display: "Paytm"
 		},
 		{
-			logo: 'phonepe.png',
-			name: 'phonepe',
+			logo: "phonepe.png",
+			name: "phonepe",
 			selected: false,
-			display: 'PhonePe'
+			display: "PhonePe"
 		},
 		{
-			logo: 'atom.png',
-			name: 'atom',
+			logo: "atom.png",
+			name: "atom",
 			selected: false,
-			display: 'Atom'
+			display: "Atom"
 		},
 		{
-			logo: 'lyra.png',
-			name: 'lyra',
+			logo: "lyra.png",
+			name: "lyra",
 			selected: false,
-			display: 'Lyra'
+			display: "Lyra"
 		}
 	];
+
+	function storeDB() {
+		let data = {
+			name: name,
+			email: email,
+			phone: phone,
+			company: company,
+			pgs: favoritePGs.map((pg) => pg.label).join(","),
+			created_at: new Date().toISOString()
+		};
+		fetch("https://api.tinybird.co/v0/events?name=gff_2024", {
+			method: "POST",
+			body: JSON.stringify(data),
+			headers: {
+				Authorization:
+					"Bearer p.eyJ1IjogIjk2NTBjMjFjLWFhYjMtNDUwNi1hMDIyLTY0NGZhNjcyZjY3YiIsICJpZCI6ICIxNDRlMjM5YS04MTAwLTQ3YjQtYTkyZC1kODE0NmFjZjYyOTYiLCAiaG9zdCI6ICJldV9zaGFyZWQifQ.i_cdf1zcYnZnPNnDxNocFIJgZpMW_jua5DJaNNOi5zc"
+			}
+		})
+			.then((res) => res.json())
+			.then((data) => console.log(data));
+	}
+
 	function formSubmit() {
 		$mypgstore = favoritePGs;
-		goto(base+'/home/insights');
+		storeDB();
+		goto(base + "/home/insights");
 	}
 </script>
 
@@ -95,9 +118,22 @@
 				<form on:submit|preventDefault={formSubmit}>
 					<div class="grid gap-4">
 						<div class="grid gap-2">
+							<Label for="name">Full Name</Label>
+							<Input
+								autocomplete="off"
+								id="name"
+								type="text"
+								placeholder="Rahul Sharma"
+								class="rounded"
+								bind:value={name}
+								required
+							/>
+						</div>
+						<div class="grid gap-2">
 							<Label for="email">Email</Label>
 							<Input
 								id="email"
+								autocomplete="off"
 								type="email"
 								placeholder="m@example.com"
 								class="rounded"
@@ -110,6 +146,7 @@
 							<Input
 								id="phone"
 								type="text"
+								autocomplete="off"
 								bind:value={phone}
 								placeholder="8474090589"
 								class="rounded"
@@ -120,6 +157,7 @@
 							<Label for="company">Company</Label>
 							<Input
 								id="company"
+								autocomplete="off"
 								type="text"
 								bind:value={company}
 								class="rounded"
@@ -145,7 +183,11 @@
 										{#each pgs as pg}
 											<Select.Item value={pg.name} label={pg.display}>
 												<div class="flex items-center gap-2">
-													<img src="{base}/{pg.logo}" alt="" class="h-3" />
+													<img
+														src="{base}/{pg.logo}"
+														alt=""
+														class="h-3"
+													/>
 													<span>{pg.display}</span>
 												</div>
 											</Select.Item>
@@ -154,7 +196,15 @@
 								</Select.Content>
 							</Select.Root>
 						</div>
-						<Button type="submit" class="w-full rounded">Start Demo</Button>
+						<Button
+							type="submit"
+							class="w-full rounded"
+							disabled={!!!name ||
+								!!!email ||
+								!!!phone ||
+								!!!company ||
+								!!!favoritePGs.length}>Start Demo</Button
+						>
 					</div>
 				</form>
 			</div>
