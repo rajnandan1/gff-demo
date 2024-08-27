@@ -105,14 +105,14 @@
 </div>
 <div class="p-4">
 	<Card.Root class="mb-8 bg-gradient-to-r from-violet-600 to-indigo-600">
-		<Card.Content class="typewriter relative p-0 pl-8">
-			<Sparkles class="absolute left-4 top-5 h-6 w-6 text-yellow-200 opacity-100" />
+		<Card.Content class="typewriter relative p-4 pl-12">
+			<Sparkles class="absolute left-4 top-5 h-4 w-4 text-yellow-200 opacity-100" />
 			<Input
 				rows="1"
 				bind:value={aiText}
-				class="h-16 border-none bg-transparent text-sm font-medium text-white focus:border-none focus:ring-0 focus-visible:shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 active:ring-0"
+				class="mx-0 h-6 rounded-none border-none   bg-transparent text-sm font-medium text-white focus:border-none focus:ring-0 focus-visible:shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 active:ring-0"
 			/>
-			<Button class="absolute right-4 top-3" on:click={aiRule}>
+			<Button class="absolute right-2 top-2" on:click={aiRule}>
 				{#if showLoader}
 					<LoaderCircle class="mr-2 h-4 w-4 animate-spin" />
 				{/if}

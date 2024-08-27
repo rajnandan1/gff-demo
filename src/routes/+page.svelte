@@ -11,7 +11,19 @@
 	let phone = "";
 	let company = "";
 	let name = "";
-	let favoritePGs = [];
+	let favoritePGs = "";
+
+	//write a function to append to localstorage
+	function addToLocalStorage(data) {
+		let currentData = localStorage.getItem("datafw");
+		if (currentData) {
+			let parsedData = JSON.parse(currentData);
+			parsedData.push(data);
+			localStorage.setItem("datafw", JSON.stringify(parsedData));
+		} else {
+			localStorage.setItem("datafw", JSON.stringify([data]));
+		}
+	}
 
 	let pgs = [
 		{
@@ -82,9 +94,10 @@
 			email: email,
 			phone: phone,
 			company: company,
-			pgs: favoritePGs.map((pg) => pg.label).join(","),
+			pgs: favoritePGs,
 			created_at: new Date().toISOString()
 		};
+		addToLocalStorage(data);
 		fetch("https://api.tinybird.co/v0/events?name=gff_2024", {
 			method: "POST",
 			body: JSON.stringify(data),
@@ -104,6 +117,9 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Flowwise Demo</title>
+</svelte:head>
 <div class="flex h-svh overflow-hidden bg-white">
 	<div class="basis-2/5">
 		<div class="flex items-center justify-center py-12">
@@ -171,7 +187,7 @@
 								id="gt"
 								portal={null}
 								items={pgs}
-								multiple={true}
+								multiple={false}
 								bind:selected={favoritePGs}
 							>
 								<Select.Trigger class="rounded">
@@ -203,7 +219,7 @@
 								!!!email ||
 								!!!phone ||
 								!!!company ||
-								!!!favoritePGs.length}>Start Demo</Button
+								!!!favoritePGs}>Start Demo</Button
 						>
 					</div>
 				</form>

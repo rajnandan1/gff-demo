@@ -163,7 +163,7 @@
 				{#if rule.type === "text"}
 					<div class="px-1">
 						<Popover.Root>
-							<Popover.Trigger class="text-sm font-medium text-indigo-500">
+							<Popover.Trigger class="text-sm font-medium underline decoration-1">
 								{rule.leftSide}
 								<ChevronDown class="-ml-1 inline" size="16" />
 							</Popover.Trigger>
@@ -187,7 +187,7 @@
 					</div>
 					<div class="px-1">
 						<Popover.Root>
-							<Popover.Trigger class="font-medium text-pink-500">
+							<Popover.Trigger class="font-medium underline decoration-1">
 								{rule.operator}
 								<ChevronDown class="-ml-1 inline" size="16" />
 							</Popover.Trigger>
@@ -209,7 +209,7 @@
 					</div>
 					<div class="px-1">
 						<Popover.Root>
-							<Popover.Trigger class="font-medium text-cyan-500">
+							<Popover.Trigger class="font-medium underline decoration-1">
 								{rule.rightSide.value}
 								<ChevronDown class="-ml-1 inline" size="16" />
 							</Popover.Trigger>
@@ -248,7 +248,7 @@
 				{:else if rule.type === "cond"}
 					<div class="px-1 {rule.value}">
 						<Popover.Root>
-							<Popover.Trigger class="font-medium text-lime-500">
+							<Popover.Trigger class="font-medium underline decoration-1">
 								{rule.value}
 								<ChevronDown class="-ml-1 inline" size="16" />
 							</Popover.Trigger>
@@ -286,7 +286,7 @@
 			<div class="">then do</div>
 			<div class="px-1">
 				<Popover.Root>
-					<Popover.Trigger class="font-medium text-purple-500">
+					<Popover.Trigger class="font-medium underline decoration-1">
 						{routing}
 						<ChevronDown class="-ml-1 inline" size="16" />
 					</Popover.Trigger>
@@ -308,7 +308,7 @@
 			<div>between</div>
 			<div class="w-full px-1">
 				<Popover.Root>
-					<Popover.Trigger class="font-medium text-rose-500">
+					<Popover.Trigger class="font-medium underline decoration-1  ">
 						{#each configs as selConf}
 							<span class="mr-2">
 								<img
@@ -321,7 +321,7 @@
 									with
 									<Input
 										type="text"
-										class="inline-block h-8 w-16 border-none p-1 text-slate-600 focus:border-none focus:ring-0 focus-visible:shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 active:ring-0"
+										class="decoration-1-offset-2 inline-block h-8 w-16 border-none p-1 underline underline decoration-1 focus:border-none focus:ring-0 focus-visible:shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 active:ring-0"
 										placeholder="10"
 										bind:value={selConf.volume}
 										on:click={(e) => {

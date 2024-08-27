@@ -1,9 +1,9 @@
 <script>
-	import { onMount } from 'svelte';
-	import { colors, chartStyleFont, getRandomInt } from '$lib/tools/chart';
-	import { ChevronDown, Lightbulb } from 'lucide-svelte';
+	import { onMount } from "svelte";
+	import { colors, chartStyleFont, getRandomInt } from "$lib/tools/chart";
+	import { ChevronDown, Lightbulb } from "lucide-svelte";
 
-	let labels = ['UPI', 'Net Banking', 'Cards', 'Wallets'];
+	let labels = ["UPI", "Net Banking", "Cards", "Wallets"];
 	export let pgs;
 	let isReady = false;
 
@@ -25,7 +25,7 @@
 			for (let j = 0; j < 7; j++) {
 				//get a random number between 0 and 9
 				let random = getRandomInt(999, 3999) * pgs.length;
-				if (element == 'UPI') {
+				if (element == "UPI") {
 					random = getRandomInt(4999, 9999) * pgs.length;
 				}
 				obj.data.push(random);
@@ -39,7 +39,7 @@
 		let date = new Date();
 		let last30Days = [];
 		for (let i = 0; i < 7; i++) {
-			let formattedDate = date.toISOString().split('T')[0]; // Format date as yyyy-mm-dd
+			let formattedDate = date.toISOString().split("T")[0]; // Format date as yyyy-mm-dd
 			last30Days.push(formattedDate);
 			date.setDate(date.getDate() - 1);
 		}
@@ -52,7 +52,10 @@
 		let dateSeries = getLast30Days();
 
 		totalTransactionCount = getRandomInt(199, 999) * pgs.length;
-		totalTransactionAmount = dataSeries.reduce((a, b) => a + b.data.reduce((c, d) => c + d, 0), 0);
+		totalTransactionAmount = dataSeries.reduce(
+			(a, b) => a + b.data.reduce((c, d) => c + d, 0),
+			0
+		);
 		avgTransactionAmount = totalTransactionAmount / totalTransactionCount;
 
 		upiSum = dataSeries[0].data.reduce((a, b) => a + b, 0);
@@ -63,7 +66,7 @@
 		let options = {
 			series: dataSeries,
 			chart: {
-				type: 'bar',
+				type: "bar",
 				height: 350,
 				stacked: true,
 				toolbar: {
@@ -77,8 +80,8 @@
 				bar: {
 					horizontal: false,
 					borderRadius: 4,
-					borderRadiusApplication: 'end', // 'around', 'end'
-					borderRadiusWhenStacked: 'last', // 'all', 'last'
+					borderRadiusApplication: "end", // 'around', 'end'
+					borderRadiusWhenStacked: "last", // 'all', 'last'
 					dataLabels: {
 						total: {
 							enabled: false,
@@ -88,20 +91,20 @@
 				}
 			},
 			xaxis: {
-				type: 'datetime',
+				type: "datetime",
 				categories: dateSeries,
 				labels: {
-					style: { ...chartStyleFont, fontSize: '10px' }
+					style: { ...chartStyleFont, fontSize: "10px" }
 				}
 			},
 			legend: {
-				position: 'top',
+				position: "top",
 				offsetY: 40,
-				horizontalAlign: 'right',
+				horizontalAlign: "right",
 				offsetX: 15,
 				offsetY: 0,
 				...chartStyleFont,
-				fontSize: '10px',
+				fontSize: "10px",
 				fontWeight: 500
 			},
 			fill: {
@@ -110,7 +113,7 @@
 			colors: colors,
 			grid: {
 				show: true,
-				borderColor: '#dedede',
+				borderColor: "#dedede",
 				strokeDashArray: 4,
 				xaxis: {
 					lines: {
@@ -126,25 +129,37 @@
 			yaxis: {
 				labels: {
 					formatter: function (value) {
-						return '₹' + (value / 100000).toFixed(2) + 'L';
+						return "₹" + (value / 100000).toFixed(2) + "L";
 					},
-					style: { ...chartStyleFont, fontSize: '10px' }
+					style: { ...chartStyleFont, fontSize: "10px" }
 				},
 				title: {
-					text: 'GMV',
+					text: "GMV",
 					style: {
-						fontSize: '10px',
-						fontFamily: 'Montserrat, sans-serif',
+						fontSize: "10px",
+						fontFamily: "Montserrat, sans-serif",
 						fontWeight: 500
 					}
 				}
 			},
 			dataLabels: {
 				enabled: false
+			},
+			tooltip: {
+				y: {
+					formatter: function (val) {
+						return (
+							"₹" +
+							(val / 100000).toFixed(2) +
+							"L, " +
+							`${parseInt((val / totalTransactionAmount) * totalTransactionCount)} Txns`
+						);
+					}
+				}
 			}
 		};
 
-		chart = new ApexCharts(document.getElementById('gmvchart'), options);
+		chart = new ApexCharts(document.getElementById("gmvchart"), options);
 		chart.render();
 	}
 	onMount(() => {
@@ -202,7 +217,10 @@
 						</h3>
 						<p class="mt-2">
 							<span class="pl-4 font-semibold text-slate-700">
-								{((ser.data.reduce((a, b) => a + b, 0) / totalTransactionAmount) * 100).toFixed(2)}%
+								{(
+									(ser.data.reduce((a, b) => a + b, 0) / totalTransactionAmount) *
+									100
+								).toFixed(2)}%
 							</span> (AVG)
 						</p>
 					</div>

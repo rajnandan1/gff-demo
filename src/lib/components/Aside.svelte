@@ -1,5 +1,5 @@
 <script>
-	import { TrendingUp, Sparkles, DoorOpen, Scale } from "lucide-svelte";
+	import { TrendingUp, Sparkles, DoorOpen, Scale, LogOut } from "lucide-svelte";
 	import { base } from "$app/paths";
 	import { page } from "$app/stores";
 
@@ -41,3 +41,24 @@
 		<span class="inline-block"> Configurations </span>
 	</a>
 </nav>
+<div class="absolute bottom-3 w-full px-2">
+	<div class="grid grid-cols-3">
+		<div class="col-span-1">
+			<p class="text-xs font-medium text-neutral-500">
+				<a href={base}>
+					<LogOut class="inline h-4" />
+					Logout
+				</a>
+			</p>
+		</div>
+		<div class="col-span-2 justify-end text-right">
+			<p class="text-xs font-medium text-neutral-500">
+				Powered by <img
+					src="https://cashfreelogo.cashfree.com/cashfreepayments/logopng4x/Cashfree_Payments_Logo-2.png"
+					class="inline h-4"
+					alt=""
+				/>
+			</p>
+		</div>
+	</div>
+</div>

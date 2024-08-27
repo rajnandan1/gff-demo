@@ -14,6 +14,8 @@
 	import { Button } from "$lib/components/ui/button";
 	import { mypgstore } from "$lib/stores.js";
 	import { getRandomInt } from "$lib/tools/chart";
+	import * as RadioGroup from "$lib/components/ui/radio-group";
+	import { base } from "$app/paths";
 
 	import {
 		TrendingUp,
@@ -88,7 +90,8 @@
 			display: "Lyra"
 		}
 	];
-	let mypgs = $mypgstore;
+	let radioPG = $mypgstore.value || "cf";
+	let mypgs = [];
 	let showLoader = false;
 	pgs = pgs.map((pg) => {
 		let pgd = mypgs.find((mypg) => mypg.value === pg.name);
@@ -107,10 +110,11 @@
 	}
 
 	async function selectPG(i) {
+		console.log(">>>>>>----  +page:112 ", radioPG);
 		showLoader = true;
 		await wait(getRandomInt(2000, 4000));
 		showLoader = false;
-		mypgs = pgs.filter((pg) => pg.selected);
+		mypgs = pgs.filter((pg) => pg.name == radioPG);
 	}
 	onMount(() => {
 		selectPG();
@@ -134,8 +138,42 @@
 <div id="header" class="sticky top-0 z-40 mb-4 w-full border-b p-4 pb-0 pt-4 backdrop-blur">
 	<div class="grid grid-cols-12 gap-4">
 		<div class="col-span-10">
-			<div class="my-4 flex flex-nowrap gap-4 overflow-x-auto pb-4">
+			<RadioGroup.Root bind:value={radioPG}>
+				<div class="my-4 mt-0 flex flex-nowrap gap-4 overflow-x-auto pb-2">
+					{#each pgs as pg, i}
+						<div
+							class="flex min-w-fit items-center space-x-2 rounded-md border bg-white p-1 hover:shadow-sm"
+						>
+							<RadioGroup.Item bind:value={pg.name} id="option-{pg.name}" />
+							<Label
+								class="  cursor-pointer transition-all duration-75  active:scale-95 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+								for="option-{pg.name}"
+							>
+								<img
+									src="{base}/{pg.logo}"
+									class="  inline-block h-6 cursor-pointer rounded-sm p-1"
+									alt=""
+									srcset=""
+								/>
+							</Label>
+						</div>
+					{/each}
+				</div>
+			</RadioGroup.Root>
+
+			<!-- <div class="my-4 flex flex-nowrap gap-4 overflow-x-auto pb-4">
+				
 				{#each pgs as pg, i}
+					<RadioGroup.Root value="option-one">
+						<div class="flex items-center space-x-2">
+							<RadioGroup.Item value="option-one" id="option-one" />
+							<Label for="option-one">Option One</Label>
+						</div>
+						<div class="flex items-center space-x-2">
+							<RadioGroup.Item value="option-two" id="option-two" />
+							<Label for="option-two">Option Two</Label>
+						</div>
+					</RadioGroup.Root>
 					<Checkbox
 						id={pg.name}
 						class="h-4 w-4 "
@@ -150,18 +188,18 @@
 						{pg.display}
 					</Label>
 				{/each}
-			</div>
+			</div> -->
 		</div>
-		<div class="col-span-2 pt-[7px]">
+		<div class="col-span-2 -mt-1">
 			<Button class="relative w-full" on:click={selectPG}>
 				<Sparkles class="absolute left-2 inline h-4 text-yellow-500" />
-				Generate Insights
+				Generate
 			</Button>
 		</div>
 	</div>
 </div>
 
-{#if mypgs.filter((pg) => pg.selected).length > 0}
+{#if mypgs.length > 0}
 	<Summarize pgs={mypgs} />
 	<div class="grid grid-cols-7 items-stretch gap-4 px-4">
 		<div class="col-span-4 flex flex-col">
