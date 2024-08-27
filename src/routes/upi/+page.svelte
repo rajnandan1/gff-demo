@@ -7,7 +7,7 @@
 	<title>UPI Switch Demo</title>
 </svelte:head>
 <div
-	class="upi-grid mx-auto h-screen w-svw bg-gradient-to-br from-violet-600 via-indigo-600 to-violet-800 md:w-[475px]"
+	class="upi-grid mx-auto min-h-screen w-svw bg-gradient-to-br from-violet-600 via-indigo-600 to-violet-800 md:w-[475px]"
 >
 	<!-- ========== HEADER ========== -->
 	<header class="z-50 flex w-full flex-wrap py-4 md:flex-nowrap md:justify-start">
@@ -32,7 +32,7 @@
 
 			<!-- Button Group -->
 			<div
-				class="ms-auto flex items-center gap-x-1 py-1 md:order-3 md:col-span-3 md:gap-x-2 md:ps-6"
+				class="  ms-auto flex items-center gap-x-1 py-1 md:order-3 md:col-span-3 md:gap-x-2 md:ps-6"
 			>
 				<a
 					href="https://www.cashfree.com/contact-sales/?source-action=upi%20qr%20code&action=Contact%20Sales&button-id=ContactSales_Hero"
